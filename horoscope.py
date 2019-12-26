@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #Author:Anshuman Mukherjee
 '''
-Pull the horoscopes from following sources
+Pulls the horoscopes from following sources
 ganeshaspeaks.com
 astrology.com
 horoscope.com
@@ -14,6 +14,8 @@ optional arguments:
   -h, --help            show this help message and exit
   -s SIGN, --sign SIGN  enter the full sun sign
   -d DAY, --day DAY     enter yesterday,today or tommorrow
+
+Script created for fun and learning, should be used by one's own discretion
 '''
 
 import urllib.request, urllib.error, urllib.parse
