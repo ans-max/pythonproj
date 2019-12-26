@@ -108,7 +108,7 @@ def main():
 	astro_info = from_Astrology_com(args.day, args.sign)
 	horo_info = from_Horoscope_com(args.day, args.sign)
 
-	if bejan_info == 0 or astro_info == 0:
+	if bejan_info == 0 or astro_info == 0 or horo_info == 0:
 		print("Sorry No horoscope, Kindly check the details provided: %(day)s , %(sign)s" %{'day':args.day, 'sign':args.sign})
 	else:
 		print("\n{}:\n".format(str(args.sign).capitalize()))
