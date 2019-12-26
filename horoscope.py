@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
-#Webscraping
-#pulls the horroscope
+#Author:Anshuman Mukherjee
+'''
+Pull the horoscopes from following sources
+ganeshaspeaks.com
+astrology.com
+horoscope.com
+
+usage: horoscope.py [-h] [-s SIGN] [-d DAY]
+
+Display the daily horoscope based on time and sign
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SIGN, --sign SIGN  enter the full sun sign
+  -d DAY, --day DAY     enter yesterday,today or tommorrow
+'''
 
 import urllib.request, urllib.error, urllib.parse
 import re, argparse,datetime
@@ -12,15 +26,12 @@ def Download_Page(url, user_agent='fatso', num_retries=2):
 	headers = {'User-agent':user_agent}
 	request = urllib.request.Request(url, headers=headers)
 	try:
-		#print 'Downloading:',url
 		html = urllib.request.urlopen(request).read()
 
 	except urllib.error.URLError as e:
-		#print "Sorry No horoscope, Kindly check the details provided:", e.reason
 		html = None
 		if num_retries > 0:
 			if hasattr(e,'code') and 500 <= e.code < 600:
-				#retry 5xx http errors
 				return download(url, user_agent, num_retries - 1)
 	return html
 
