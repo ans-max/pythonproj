@@ -65,7 +65,7 @@ def from_Astrology_com(time = "today", sign = "aquarius"):
 	htm = Download_Page(fetch_url)
 	if htm != None:
 		data = soup(htm, 'lxml')
-		tr = data.find("div", {"class":"grid grid-right-sidebar primis-rr"}).find("p")
+		tr = data.find("div", {"class":"horoscope-main grid grid-right-sidebar primis-rr"}).find("p")
 		return tr
 	else:
 		return 0
